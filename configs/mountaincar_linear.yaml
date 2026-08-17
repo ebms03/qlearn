@@ -1,0 +1,27 @@
+env:
+  name: "MountainCar-v0" 
+  seed: 42
+
+agent:
+  type: "linear"
+  feature_fn:
+    type: "fourier"
+    order: 6
+    max_freq: 6
+  alpha: 0.001
+  gamma: 0.99
+  epsilon_decay: 10
+  epsilon_min: 0.01
+
+trainer:
+  episodes: 1000
+
+evaluator:
+  episodes: 100 
+
+reporting:  
+  log_every: 50  
+
+checkpoint:
+  save_dir: "./ckpt/mountaincar_linear"
+  save_every: 200

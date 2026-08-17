@@ -1,0 +1,27 @@
+env:
+  name: "Acrobot-v1"
+  seed: 42
+
+agent:
+  type: "linear"
+  feature_fn:
+    type: "poly"
+    order: 3
+    max_power: 3
+  alpha: 0.0001
+  gamma: 0.99
+  epsilon_decay: 5
+  epsilon_min: 0.01
+
+trainer:
+  episodes: 1000
+
+evaluator:
+  episodes: 100 
+
+reporting:  
+  log_every: 50 
+
+checkpoint:
+  save_dir: "./ckpt/acrobot_linear"
+  save_every: 200

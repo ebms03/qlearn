@@ -1,0 +1,27 @@
+env:
+  name: "MountainCar-v0"
+  seed: 42
+
+agent:
+  type: "dqn"
+  network_hidden: [64]
+  alpha: 0.001
+  gamma: 0.99
+  epsilon_min: 0.01
+  epsilon_decay: 5
+  batch_size: 64
+  buffer_size: 10000
+  target_update_tau: 0.005
+
+reward_shaper:
+   type: "mountaincar_potential"
+   scale: 1
+
+trainer:
+  episodes: 1000 
+
+evaluator:
+  episodes: 100 
+
+reporting: 
+  log_every: 50 

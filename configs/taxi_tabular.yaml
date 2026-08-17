@@ -1,0 +1,20 @@
+env:
+  name: "Taxi-v4" 
+  seed: 42
+
+agent:
+  type: "tabular"
+  alpha: 0.1
+  gamma: 0.95
+  epsilon_decay: 5
+  epsilon_min: 0.001
+
+trainer:
+  episodes: 10000
+  max_steps: 200
+
+evaluator:
+  episodes: 100  
+
+reporting: 
+  log_every: 1000
